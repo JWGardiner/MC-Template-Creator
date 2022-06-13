@@ -9,7 +9,7 @@ fun main() {
         window.setSize(800, 500)
         window.layout = GridLayout(3,6)
         window.setLocationRelativeTo(null)
-        (1..3).map {
+        (1..2).map {
             when (it) {
                 1 -> {
                     JButton("Resource Pack Generator").also { button ->
@@ -24,22 +24,15 @@ fun main() {
                         }
                     }
                 }
-                2 -> {
-                    JButton("Data Pack Generator").also { button ->
-                        button.addActionListener {
-                            val version: String = JOptionPane.showInputDialog(
-                                "Minecraft Version:", null
-                            )
-                            val name: String = JOptionPane.showInputDialog(
-                                "Datapack Name:", null
-                            )
-                            datapack(version, name)
-                        }
-                    }
-                }
-                else -> JButton("Fabric Template Downloader").also { button ->
+                else -> JButton("Data Pack Generator").also { button ->
                     button.addActionListener {
-                        fabricmod()
+                        val version: String = JOptionPane.showInputDialog(
+                            "Minecraft Version:", null
+                        )
+                        val name: String = JOptionPane.showInputDialog(
+                            "Datapack Name:", null
+                        )
+                        datapack(version, name)
                     }
                 }
             }

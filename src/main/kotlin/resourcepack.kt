@@ -3,6 +3,7 @@ import java.nio.file.Paths
 
 fun resourcepack(version: String, name: String) {
     println("Creating \"$name\" resourcepack for $version")
+    //Create folders
     Files.createDirectory(Paths.get(name))
     Files.createDirectory(Paths.get("$name/assets/"))
     Files.createDirectory(Paths.get("$name/assets/minecraft"))
@@ -52,45 +53,46 @@ fun resourcepack(version: String, name: String) {
     Files.createDirectory(Paths.get("$name/assets/minecraft/optifine/sky"))
     val file = "$name/pack.mcmeta"
     Files.createFile(Paths.get(file))
+    //Generate mcmeta
     when (version) {
         "1.19" -> {
             Files.writeString(Paths.get(file),
-            "{    \n        \"pack\": {\n            \"pack_format\": 8,\n            \"description\": \"Custom Resource Pack\"\n    }\n}\n"
+            "{    \n        \"pack\": {\n            \"pack_format\": 9,\n            \"description\": \"Custom Resource Pack\"\n    }\n}\n"
                     )
         }
         "1.18" -> {
             Files.writeString(Paths.get(file),
-                "{    \n        \"pack\": {\n            \"pack_format\": 7,\n            \"description\": \"Custom Resource Pack\"\n    }\n}\n"
+                "{    \n        \"pack\": {\n            \"pack_format\": 8,\n            \"description\": \"Custom Resource Pack\"\n    }\n}\n"
             )
         }
         "1.17" -> {
             Files.writeString(Paths.get(file),
-                "{    \n        \"pack\": {\n            \"pack_format\": 6,\n            \"description\": \"Custom Resource Pack\"\n    }\n}\n"
+                "{    \n        \"pack\": {\n            \"pack_format\": 7,\n            \"description\": \"Custom Resource Pack\"\n    }\n}\n"
             )
         }
         "1.16" -> {
             Files.writeString(Paths.get(file),
-                "{    \n        \"pack\": {\n            \"pack_format\": 5,\n            \"description\": \"Custom Resource Pack\"\n    }\n}\n"
+                "{    \n        \"pack\": {\n            \"pack_format\": 6,\n            \"description\": \"Custom Resource Pack\"\n    }\n}\n"
             )
         }
         "1.15" -> {
             Files.writeString(Paths.get(file),
-                "{    \n        \"pack\": {\n            \"pack_format\": 4,\n            \"description\": \"Custom Resource Pack\"\n    }\n}\n"
+                "{    \n        \"pack\": {\n            \"pack_format\": 5,\n            \"description\": \"Custom Resource Pack\"\n    }\n}\n"
             )
         }
         "1.14" -> {
             Files.writeString(Paths.get(file),
-                "{    \n        \"pack\": {\n            \"pack_format\": 3,\n            \"description\": \"Custom Resource Pack\"\n    }\n}\n"
+                "{    \n        \"pack\": {\n            \"pack_format\": 4,\n            \"description\": \"Custom Resource Pack\"\n    }\n}\n"
             )
         }
         "1.13" -> {
             Files.writeString(Paths.get(file),
-                "{    \n        \"pack\": {\n            \"pack_format\": 2,\n            \"description\": \"Custom Resource Pack\"\n    }\n}\n"
+                "{    \n        \"pack\": {\n            \"pack_format\": 4,\n            \"description\": \"Custom Resource Pack\"\n    }\n}\n"
             )
         }
         "1.12" -> {
             Files.writeString(Paths.get(file),
-                "{    \n        \"pack\": {\n            \"pack_format\": 1,\n            \"description\": \"Custom Resource Pack\"\n    }\n}\n"
+                "{    \n        \"pack\": {\n            \"pack_format\": 3,\n            \"description\": \"Custom Resource Pack\"\n    }\n}\n"
             )
         }
     }

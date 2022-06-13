@@ -2,6 +2,7 @@ import java.awt.GridLayout
 import javax.swing.*
 
 fun main() {
+    //Create window, actionlisteners, and buttons
     UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName())
     JFrame().also { window ->
         window.title = "JWG Resource Pack Generator"
@@ -26,7 +27,13 @@ fun main() {
                 2 -> {
                     JButton("Data Pack Generator").also { button ->
                         button.addActionListener {
-                            datapack()
+                            val version: String = JOptionPane.showInputDialog(
+                                "Minecraft Version:", null
+                            )
+                            val name: String = JOptionPane.showInputDialog(
+                                "Datapack Name:", null
+                            )
+                            datapack(version, name)
                         }
                     }
                 }
